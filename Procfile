@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn igenieriabackend.wsgi
+web: gunicorn igenieriabackend.wsgi --log-file -
