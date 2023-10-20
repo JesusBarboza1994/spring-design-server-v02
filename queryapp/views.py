@@ -197,16 +197,6 @@ class Prueba(Authentication, viewsets.ModelViewSet):
 
 # Create your views here.
 
-def hello(request, username):
-    print(username)
-    return HttpResponse("<h1>Hello %s</h1>" % username)
-
-
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
-def about(request):
-    return HttpResponse('About')
-
 def clients(request):
     clients = list(Client.objects.values())
     return JsonResponse(clients, safe=False)
